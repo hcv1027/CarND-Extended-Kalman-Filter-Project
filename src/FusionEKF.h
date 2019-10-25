@@ -32,7 +32,8 @@ class FusionEKF {
   KalmanFilter ekf_;
 
  private:
-  // check whether the tracking toolbox was initialized or not (first measurement)
+  // check whether the tracking toolbox was initialized or not (first
+  // measurement)
   bool is_initialized_;
 
   // previous timestamp
@@ -44,6 +45,10 @@ class FusionEKF {
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
   Eigen::MatrixXd Hj_;
+
+  // acceleration noise components
+  float noise_ax_;
+  float noise_ay_;
 };
 
-#endif // FusionEKF_H_
+#endif  // FusionEKF_H_
